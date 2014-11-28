@@ -8,7 +8,7 @@
 module.exports = function millisecond(ms) {
   'use strict';
 
-  if ('string' !== typeof ms || +ms) return +ms;
+  if ('string' !== typeof ms || '0' === ms || +ms) return +ms;
 
   var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(ms)
     , second = 1000
