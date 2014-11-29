@@ -4,8 +4,11 @@ describe('millisecond', function () {
   var assume = require('assume')
     , ms = require('./');
 
-  it('should preserve ms', function () {
+  it('should preserve strings that represent numbers', function () {
     assume(ms('100')).to.equal(100);
+    assume(ms('10')).to.equal(10);
+    assume(ms('1')).to.equal(1);
+    assume(ms('0')).to.equal(0);
   });
 
   it('can parse numbers', function () {
