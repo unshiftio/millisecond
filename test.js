@@ -49,6 +49,14 @@ describe('millisecond', function () {
     assume(ms('2days')).to.equal(172800000);
   });
 
+  it('should convert w to ms', function () {
+    assume(ms('1w')).to.equal(604800000);
+    assume(ms('1wk')).to.equal(604800000);
+    assume(ms('1wks')).to.equal(604800000);
+    assume(ms('1week')).to.equal(604800000);
+    assume(ms('1weeks')).to.equal(604800000);
+  });
+
   it('should convert y to ms', function () {
     assume(ms('1y')).to.equal(31536000000);
     assume(ms('1yr')).to.equal(31536000000);

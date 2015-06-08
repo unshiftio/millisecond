@@ -1,13 +1,13 @@
 # millisecond
 
-[![Made by unshift][made-by]](http://unshift.io)[![Version npm][version]](http://browsenpm.org/package/millisecond)[![Build Status][build]](https://travis-ci.org/unshiftio/millisecond)[![Dependencies][david]](https://david-dm.org/unshiftio/millisecond)[![Coverage Status][cover]](https://coveralls.io/r/unshiftio/millisecond?branch=master)[![IRC channel][irc]](http://webchat.freenode.net/?channels=unshift)
+[![Made by unshift][made-by]](http://unshift.io)[![Version npm][version]](http://browsenpm.org/package/millisecond)[![Build Status][build]](https://travis-ci.org/unshiftio/millisecond)[![Dependencies][david]](https://david-dm.org/unshiftio/millisecond)[![Coverage Status][cover]](https://coveralls.io/r/unshiftio/millisecond?branch=master)[![IRC channel][irc]](https://webchat.freenode.net/?channels=unshift)
 
 [made-by]: https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square
-[version]: http://img.shields.io/npm/v/millisecond.svg?style=flat-square
-[build]: http://img.shields.io/travis/unshiftio/millisecond/master.svg?style=flat-square
+[version]: https://img.shields.io/npm/v/millisecond.svg?style=flat-square
+[build]: https://img.shields.io/travis/unshiftio/millisecond/master.svg?style=flat-square
 [david]: https://img.shields.io/david/unshiftio/millisecond.svg?style=flat-square
-[cover]: http://img.shields.io/coveralls/unshiftio/millisecond/master.svg?style=flat-square
-[irc]: http://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square
+[cover]: https://img.shields.io/coveralls/unshiftio/millisecond/master.svg?style=flat-square
+[irc]: https://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square
 
 Parse strings that indicate a time to their millisecond equivalents.
 
@@ -65,6 +65,11 @@ It understands the following strings:
 - `x days`
 - `x day`
 - `x d`
+- `x weeks`
+- `x week`
+- `x wks`
+- `x wk`
+- `x w`
 - `x years`
 - `x year`
 - `x yrs`

@@ -10,11 +10,12 @@ module.exports = function millisecond(ms) {
 
   if ('string' !== typeof ms || '0' === ms || +ms) return +ms;
 
-  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(ms)
+  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|wks?|w|years?|yrs?|y)?$/i.exec(ms)
     , second = 1000
     , minute = second * 60
     , hour = minute * 60
     , day = hour * 24
+    , week = day * 7
     , year = day * 365
     , amount;
 
@@ -29,6 +30,13 @@ module.exports = function millisecond(ms) {
     case 'yr':
     case 'y':
       return amount * year;
+
+    case 'weeks':
+    case 'week':
+    case 'wks':
+    case 'wk':
+    case 'w':
+      return amount * week;
 
     case 'days':
     case 'day':
