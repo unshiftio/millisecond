@@ -15,6 +15,7 @@ module.exports = function millisecond(ms) {
     , minute = second * 60
     , hour = minute * 60
     , day = hour * 24
+    , year = day * 365
     , amount;
 
   if (!match) return 0;
@@ -22,6 +23,13 @@ module.exports = function millisecond(ms) {
   amount = parseFloat(match[1]);
 
   switch (match[2].toLowerCase()) {
+    case 'years':
+    case 'year':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return amount * year;
+
     case 'days':
     case 'day':
     case 'd':

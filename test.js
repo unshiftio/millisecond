@@ -15,6 +15,18 @@ describe('millisecond', function () {
     assume(ms(100)).to.equal(100);
   });
 
+  it('should convert ms to ms', function () {
+    assume(ms('100ms')).to.equal(100);
+  });
+
+  it('should convert s to ms', function () {
+    assume(ms('1s')).to.equal(1000);
+    assume(ms('1sec')).to.equal(1000);
+    assume(ms('1secs')).to.equal(1000);
+    assume(ms('1second')).to.equal(1000);
+    assume(ms('1seconds')).to.equal(1000);
+  });
+
   it('should convert from m to ms', function () {
     assume(ms('1m')).to.equal(60000);
     assume(ms('1min')).to.equal(60000);
@@ -37,16 +49,12 @@ describe('millisecond', function () {
     assume(ms('2days')).to.equal(172800000);
   });
 
-  it('should convert s to ms', function () {
-    assume(ms('1s')).to.equal(1000);
-    assume(ms('1sec')).to.equal(1000);
-    assume(ms('1secs')).to.equal(1000);
-    assume(ms('1second')).to.equal(1000);
-    assume(ms('1seconds')).to.equal(1000);
-  });
-
-  it('should convert ms to ms', function () {
-    assume(ms('100ms')).to.equal(100);
+  it('should convert y to ms', function () {
+    assume(ms('1y')).to.equal(31536000000);
+    assume(ms('1yr')).to.equal(31536000000);
+    assume(ms('1yrs')).to.equal(31536000000);
+    assume(ms('1year')).to.equal(31536000000);
+    assume(ms('1years')).to.equal(31536000000);
   });
 
   it('should work with decimals', function () {
