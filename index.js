@@ -1,3 +1,35 @@
+'use strict';
+
+var regex = new RegExp('^((?:\\d+)?\\.?\\d+) *('+ [
+  'milliseconds?',
+  'msecs?',
+  'ms',
+  'seconds?',
+  'secs?',
+  's',
+  'minutes?',
+  'mins?',
+  'm',
+  'hours?',
+  'hrs?',
+  'h',
+  'days?',
+  'd',
+  'weeks?',
+  'wks?',
+  'w',
+  'years?',
+  'yrs?',
+  'y'
+].join('|') +')?$', 'i');
+
+var second = 1000
+  , minute = second * 60
+  , hour = minute * 60
+  , day = hour * 24
+  , week = day * 7
+  , year = day * 365;
+
 /**
  * Parse a time string and return the number value of it.
  *
@@ -6,17 +38,9 @@
  * @api private
  */
 module.exports = function millisecond(ms) {
-  'use strict';
-
   if ('string' !== typeof ms || '0' === ms || +ms) return +ms;
 
-  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|wks?|w|years?|yrs?|y)?$/i.exec(ms)
-    , second = 1000
-    , minute = second * 60
-    , hour = minute * 60
-    , day = hour * 24
-    , week = day * 7
-    , year = day * 365
+  var match = regex.exec(ms)
     , amount;
 
   if (!match) return 0;
