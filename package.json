@@ -1,6 +1,6 @@
 {
   "name": "millisecond",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert time strings to milliseconds",
   "main": "index.js",
   "scripts": {
