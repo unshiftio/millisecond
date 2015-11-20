@@ -38,12 +38,20 @@ var second = 1000
  * @api private
  */
 module.exports = function millisecond(ms) {
-  if ('string' !== typeof ms || '0' === ms || +ms) return +ms;
+  var type = typeof ms
+    , amount
+    , match;
 
-  var match = regex.exec(ms)
-    , amount;
+  if ('number' === type) return ms;
+  else if ('string' !== type || '0' === ms || !ms) return 0;
+  else if (+ms) return +ms;
 
-  if (!match) return 0;
+  //
+  // We are vulnerable to the regular expression denial of service (ReDoS).
+  // In order to mitigate this we don't parse the input string if it is too long.
+  // See https://nodesecurity.io/advisories/46.
+  //
+  if (ms.length > 10000 || !(match = regex.exec(ms))) return 0;
 
   amount = parseFloat(match[1]);
 

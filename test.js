@@ -11,7 +11,21 @@ describe('millisecond', function () {
     assume(ms('0')).to.equal(0);
   });
 
-  it('can parse numbers', function () {
+  it('should bail out if the input string is too long', function () {
+    var str = ''
+      , i = 0;
+
+    for (; i < 10000; i++) str += '5';
+    str += ' minutes';
+
+    assume(ms(str)).to.equal(0);
+  });
+
+  it('should return 0 if invalid', function () {
+    assume(ms('Hello mom')).to.equal(0);
+  });
+
+  it('should parse numbers', function () {
     assume(ms(100)).to.equal(100);
   });
 
@@ -71,10 +85,6 @@ describe('millisecond', function () {
 
   it('should work with multiple spaces', function () {
     assume(ms('1   s')).to.equal(1000);
-  });
-
-  it('should return 0 if invalid', function () {
-    assume(ms('Hello mom')).to.equal(0);
   });
 
   it('should be case-insensitive', function () {
