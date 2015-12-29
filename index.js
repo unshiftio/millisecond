@@ -53,6 +53,10 @@ module.exports = function millisecond(ms) {
   //
   if (ms.length > 10000 || !(match = regex.exec(ms))) return 0;
 
+  if (match[2] == null) {
+    return 0;
+  }
+
   amount = parseFloat(match[1]);
 
   switch (match[2].toLowerCase()) {

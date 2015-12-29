@@ -94,4 +94,9 @@ describe('millisecond', function () {
   it('should work with numbers starting with .', function () {
     assume(ms('.5ms')).to.equal(0.5);
   });
+
+  it('should enforce null checks)', function(){
+    assume(ms('000')).to.equals(0)
+  });
+
 });
