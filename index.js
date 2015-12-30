@@ -43,8 +43,8 @@ module.exports = function millisecond(ms) {
     , match;
 
   if ('number' === type) return ms;
-  else if ('string' !== type || '0' === ms || !ms) return 0;
-  else if (+ms) return +ms;
+  if ('string' !== type) return 0;
+  if (!isNaN(+ms)) return +ms;
 
   //
   // We are vulnerable to the regular expression denial of service (ReDoS).

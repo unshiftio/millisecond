@@ -25,6 +25,11 @@ describe('millisecond', function () {
     assume(ms('Hello mom')).to.equal(0);
   });
 
+  it('should return 0 if the input string represents 0', function(){
+    assume(ms('000.00')).to.equals(0);
+    assume(ms('000000')).to.equals(0);
+  });
+
   it('should parse numbers', function () {
     assume(ms(100)).to.equal(100);
   });
