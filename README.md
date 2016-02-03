@@ -2,6 +2,9 @@
 
 [![Made by unshift][made-by]](http://unshift.io)[![Version npm][version]](http://browsenpm.org/package/millisecond)[![Build Status][build]](https://travis-ci.org/unshiftio/millisecond)[![Dependencies][david]](https://david-dm.org/unshiftio/millisecond)[![Coverage Status][cover]](https://coveralls.io/r/unshiftio/millisecond?branch=master)[![IRC channel][irc]](https://webchat.freenode.net/?channels=unshift)
 
+[![Sauce Test Status][browser-matrix]](https://saucelabs.com/u/millisecond)
+
+[browser-matrix]: https://saucelabs.com/browser-matrix/millisecond.svg
 [made-by]: https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square
 [version]: https://img.shields.io/npm/v/millisecond.svg?style=flat-square
 [build]: https://img.shields.io/travis/unshiftio/millisecond/master.svg?style=flat-square
@@ -82,7 +85,7 @@ numbers and we assume that these are always in milliseconds.
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 This module is heavily inspired by the `ms` module which is also licensed under
 MIT. If you also need to transform numbers back in to strings I suggest you look
