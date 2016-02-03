@@ -36,7 +36,7 @@
     "istanbul": "0.4.x",
     "mocha": "2.4.x",
     "pre-commit": "1.1.x",
-    "zuul": "^3.9.0"
+    "zuul": "3.9.x"
   },
   "homepage": "https://github.com/unshiftio/millisecond"
 }
