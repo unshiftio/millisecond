@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "test": "mocha test.js",
+    "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+    "coverage": "istanbul cover _mocha -- test.js",
+    "test-browser": "zuul -- test.js",
     "watch": "mocha --watch test.js",
-    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+    "test": "mocha test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/unshiftio/millisecond"
+    "url": "https://github.com/unshiftio/millisecond.git"
   },
   "keywords": [
     "ms",
@@ -33,8 +34,9 @@
   "devDependencies": {
     "assume": "1.3.x",
     "istanbul": "0.4.x",
-    "mocha": "2.3.x",
-    "pre-commit": "1.1.x"
+    "mocha": "2.4.x",
+    "pre-commit": "1.1.x",
+    "zuul": "^3.9.0"
   },
   "homepage": "https://github.com/unshiftio/millisecond"
 }
