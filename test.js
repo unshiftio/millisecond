@@ -4,11 +4,25 @@ describe('millisecond', function () {
   var assume = require('assume')
     , ms = require('./');
 
+  it('should parse numbers', function () {
+    assume(ms(100)).to.equal(100);
+  });
+
+  it('should return 0 if the input is not a string or number', function () {
+    assume(ms([10])).to.equal(0);
+  });
+
   it('should preserve strings that represent numbers', function () {
     assume(ms('100')).to.equal(100);
     assume(ms('10')).to.equal(10);
     assume(ms('1')).to.equal(1);
     assume(ms('0')).to.equal(0);
+  });
+
+  it('should return 0 if the input string represents 0', function () {
+    assume(ms('000.00')).to.equals(0);
+    assume(ms('000000')).to.equals(0);
+    assume(ms('')).to.equals(0);
   });
 
   it('should bail out if the input string is too long', function () {
@@ -23,16 +37,6 @@ describe('millisecond', function () {
 
   it('should return 0 if invalid', function () {
     assume(ms('Hello mom')).to.equal(0);
-  });
-
-  it('should return 0 if the input string represents 0', function () {
-    assume(ms('000.00')).to.equals(0);
-    assume(ms('000000')).to.equals(0);
-    assume(ms('')).to.equals(0);
-  });
-
-  it('should parse numbers', function () {
-    assume(ms(100)).to.equal(100);
   });
 
   it('should convert ms to ms', function () {
