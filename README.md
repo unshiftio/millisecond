@@ -1,6 +1,6 @@
 # millisecond
 
-[![Made by unshift][made-by]](http://unshift.io)[![Version npm][version]](http://browsenpm.org/package/millisecond)[![Build Status][build]](https://travis-ci.org/unshiftio/millisecond)[![Dependencies][david]](https://david-dm.org/unshiftio/millisecond)[![Coverage Status][cover]](https://coveralls.io/r/unshiftio/millisecond?branch=master)[![IRC channel][irc]](https://webchat.freenode.net/?channels=unshift)
+[![Made by unshift][made-by]](http://unshift.io)[![Version npm][version]](https://www.npmjs.com/package/millisecond)[![Build Status][build]](https://travis-ci.org/unshiftio/millisecond)[![Dependencies][david]](https://david-dm.org/unshiftio/millisecond)[![Coverage Status][cover]](https://coveralls.io/r/unshiftio/millisecond?branch=master)[![IRC channel][irc]](https://webchat.freenode.net/?channels=unshift)
 
 [![Sauce Test Status][browser-matrix]](https://saucelabs.com/u/millisecond)
 
