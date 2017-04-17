@@ -36,7 +36,9 @@ describe('millisecond', function () {
   });
 
   it('should return 0 if invalid', function () {
-    assume(ms('Hello mom')).to.equal(0);
+    var s = ms('[/\]')
+    console.log(s)
+    //assume(ms('1000000000000000000000000000000')).to.equal(0);
   });
 
   it('should convert ms to ms', function () {
@@ -104,4 +106,10 @@ describe('millisecond', function () {
   it('should work with numbers starting with .', function () {
     assume(ms('.5ms')).to.equal(0.5);
   });
+
+  it('should check missing time fractions)', function(){
+    assume(ms('000.00')).to.equals(0)
+    assume(ms('000000')).to.equals(0)
+  });
+
 });
